@@ -1,0 +1,10 @@
+{
+    "vm_name": "packer-ubuntu-1604-server",
+    "iso_url": "http://releases.ubuntu.com/16.04/ubuntu-16.04.7-server-amd64.iso",
+    "iso_checksum_type": "sha256",
+    "iso_checksum": "b23488689e16cad7a269eb2d3a3bf725d3457ee6b0868e00c8762d3816e25848",
+    "disk_size": "102400",
+    "os_edition": "server",
+    "boot_command_prefix": "<enter><wait><f6><wait><esc><wait><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>/install/vmlinuz auto<wait> initrd=/install/initrd.gz priority=critical locale=en_GB url=",
+    "seed_path": "ubuntu/preseed-server-ap.cfg"
+}

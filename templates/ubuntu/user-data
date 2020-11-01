@@ -1,0 +1,31 @@
+#cloud-config
+autoinstall:
+  version: 1
+  early-commands:
+    # Live Installer runs a SSH server, so need to prevent Packer connecting while setup is running
+    - iptables -A INPUT -p tcp --dport 22 -j DROP
+  identity:
+    hostname: ubuntu-server
+    password: "$6$N8xNsnejH.D$wvVbzXcAx2rcl20tvsZ3pZb39S.xMDSle9SSITNBJeAxS/nu1pVdsh4WgrJ6U3hi4Xu5QZqHXz9F3O7Wnugqg1"
+    username: packer
+  ssh:
+    allow-pw: true
+    install-server: true
+  apt:
+    geoip: true
+    preserve_sources_list: false
+    primary:
+      - arches: [amd64, i386]
+        uri: http://gb.archive.ubuntu.com/ubuntu
+      - arches: [default]
+        uri: http://ports.ubuntu.com/ubuntu-ports
+  locale: en_GB.UTF-8
+  keyboard: 
+    layout: uk
+  storage:
+    layout:
+      name: lvm
+  late-commands:
+    - "echo 'Defaults:packer !requiretty' > /target/etc/sudoers.d/packer"
+    - "echo 'packer ALL=(ALL) NOPASSWD: ALL' >> /target/etc/sudoers.d/packer"
+    - "chmod 440 /target/etc/sudoers.d/packer"

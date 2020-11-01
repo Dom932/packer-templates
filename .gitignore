@@ -1,0 +1,6 @@
+*.exe
+*.vars.json
+*.var.json
+packer_cache/
+packer_output/
+output-*/
