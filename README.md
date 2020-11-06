@@ -55,19 +55,3 @@ cd ubuntu/<version>/<desktop|server>/<architecture>
 
 packer build -only=<provider> -var-file=optional-vars.json -var-file=template-ap.json ../../../ubuntu.json
 ```
-
-
-## Usage
-
-1. Select distro/release/version/architecture to build and navigate to its directory
-
-    ```
-    cd ubuntu/18.04/server/amd64
-    ```
-
-2.  Run packer for the target provider. Pass additonal varibles if required. For Example:
-
-    ```
-    packer build -only=<provider> -var-file=optional-vars.json -var-file=template.json ../../../ubuntu-server.json
-    ```
-
