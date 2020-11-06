@@ -9,6 +9,7 @@
         "os_edition": "",
         "disk_size": "",
         "boot_command_prefix": "",
+        "boot_command_suffix": "",
         "seed_path": "",
         "vcenter_username" : "",
         "vcenter_password" : "",
@@ -34,6 +35,7 @@
             "vm_name": "{{ user `vm_name` }}-{{isotime \"2006-01-02\"}}",
 
             "guest_os_type": "ubuntu-64",
+            "version": 15,
             "headless": false,
 
             "http_directory": "../../../../templates",
@@ -57,6 +59,7 @@
             "boot_command": [
                 "{{ user `boot_command_prefix` }}",
                 "http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{ user `seed_path` }}",
+                " {{ user `boot_command_suffix` }}",
                 "<enter>"
             ]
         },
@@ -101,6 +104,7 @@
               "boot_command": [
                 "{{ user `boot_command_prefix` }}",
                 "/media/{{ user `seed_path` }}",
+                " {{ user `boot_command_suffix` }}",
                 "<enter>"
               ]
         },
@@ -132,6 +136,7 @@
             "boot_command": [
                 "{{ user `boot_command_prefix` }}",
                 "http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{ user `seed_path` }}",
+                " {{ user `boot_command_suffix` }}",
                 "<enter>"
             ]
         }
