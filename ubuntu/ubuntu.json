@@ -81,7 +81,7 @@
             "iso_url": "{{ user `iso_url` }}",
 
             "cpus": "{{ user `cpus` }}",
-            "memory": "{{ user `memory` }}",
+            "ram": "{{ user `memory` }}",
             "disk_controller_type":  "{{ user `vsphere_disk_controller_type` }}",
             "disk_size": "{{ user `disk_size` }}",
             "datastore": "{{user `vsphere_datastore`}}",
