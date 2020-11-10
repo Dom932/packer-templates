@@ -1,6 +1,7 @@
 *.exe
 *.vars.json
 *.var.json
+optional-vars.json
 packer_cache/
 packer_output/
 output-*/
