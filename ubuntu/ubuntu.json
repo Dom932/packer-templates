@@ -83,12 +83,15 @@
             "cpus": "{{ user `cpus` }}",
             "ram": "{{ user `memory` }}",
             "disk_controller_type":  "{{ user `vsphere_disk_controller_type` }}",
-            "disk_size": "{{ user `disk_size` }}",
+            "storage": [{
+                "disk_size": "{{ user `disk_size` }}",
+                "disk_thin_provisioned": true
+            }],
             "datastore": "{{user `vsphere_datastore`}}",
-            "disk_thin_provisioned": true,
-  
-            "network_card": "vmxnet3",
-            "network": "{{user `vsphere_network`}}",
+            "network_adapters": [{
+                "network_card": "vmxnet3",
+                "network": "{{user `vsphere_network`}}"
+            }],            
 
             "ssh_username": "packer",
             "ssh_password": "packer",
