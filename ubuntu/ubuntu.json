@@ -16,7 +16,6 @@
         "vcenter_password" : "",
         "vsphere_cluster" : "",
         "vsphere_folder" : "",
-        "vsphere_disk_size" : "",
         "vsphere_datastore" : "",
         "vsphere_network" : "",
         

@@ -18,12 +18,11 @@ When using `vsphere-iso` provider the following varibles must be defined and pas
 
 ```
 {
-    "disk_size": "",
+    "vcenter_server" : "",
     "vcenter_username" : "",
     "vcenter_password" : "",
     "vsphere_cluster" : "",
     "vsphere_folder" : "",
-    "vsphere_disk_size" : "",
     "vsphere_datastore" : "",
     "vsphere_network" : ""
 }
