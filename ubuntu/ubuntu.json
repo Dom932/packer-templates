@@ -11,6 +11,7 @@
         "boot_command_prefix": "",
         "boot_command_suffix": "",
         "seed_path": "",
+        "vcenter_server": "",
         "vcenter_username" : "",
         "vcenter_password" : "",
         "vsphere_cluster" : "",
