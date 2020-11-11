@@ -9,6 +9,8 @@
         "os_edition": "",
         "disk_size": "",
         "boot_command_prefix": "",
+        "seed_http_method": "",
+        "seed_file_method": "",
         "boot_command_suffix": "",
         "seed_path": "",
         "vcenter_server": "",
@@ -58,7 +60,7 @@
             "boot_wait": "5s",
             "boot_command": [
                 "{{ user `boot_command_prefix` }}",
-                "http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{ user `seed_path` }}",
+                "{{ user `seed_http_method` }}http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{ user `seed_path` }}",
                 " {{ user `boot_command_suffix` }}",
                 "<enter>"
             ]
@@ -99,14 +101,14 @@
 
             "shutdown_command": "sudo shutdown -P now",
 
-            "floppy_files": [
-                "../../../../templates/"
+            "floppy_dirs": [
+                "../../../../templates/ubuntu/"
               ],
       
               "boot_wait": "5s",
               "boot_command": [
                 "{{ user `boot_command_prefix` }}",
-                "/media/{{ user `seed_path` }}",
+                "{{ user `seed_file_method` }}/media/{{ user `seed_path` }}",
                 " {{ user `boot_command_suffix` }}",
                 "<enter>"
               ]
@@ -138,7 +140,7 @@
             "boot_wait": "5s",
             "boot_command": [
                 "{{ user `boot_command_prefix` }}",
-                "http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{ user `seed_path` }}",
+                "{{ user `seed_http_method` }}http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{ user `seed_path` }}",
                 " {{ user `boot_command_suffix` }}",
                 "<enter>"
             ]
