@@ -57,7 +57,7 @@
 
             "shutdown_command": "sudo shutdown -P now",
 
-            "boot_wait": "5s",
+            "boot_wait": "10s",
             "boot_command": [
                 "{{ user `boot_command_prefix` }}",
                 "{{ user `seed_http_method` }}http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{ user `seed_path` }}",
